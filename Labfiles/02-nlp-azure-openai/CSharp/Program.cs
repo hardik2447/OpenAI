@@ -1,4 +1,6 @@
-﻿// Implicit using statements are included
+﻿// run the code with command dotnet run
+
+// Implicit using statements are included
 using System.Text;
 using System.Text.Json;
 using Microsoft.Extensions.Configuration;
