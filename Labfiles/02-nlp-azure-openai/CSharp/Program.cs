@@ -18,6 +18,8 @@ string? oaiKey = config["AzureOAIKey"];
 string? oaiDeploymentName = config["AzureOAIDeploymentName"];
 
 // Read sample text file into a string
+// This code reads the txt file and summarizes in 20 words
+
 string textToSummarize = System.IO.File.ReadAllText(@"../text-files/sample-text.txt");
 
 // Generate summary from Azure OpenAI
@@ -45,7 +47,7 @@ void GetSummaryFromOpenAI(string text)
         new ChatMessage(ChatRole.System, "You are a helpful assistant."),
         new ChatMessage(ChatRole.User, "Summarize the following text in 20 words or less:\n" + text),
     },
-        MaxTokens = 120,
+        MaxTokens = 1000,
         Temperature = 0.7f,
         DeploymentName = oaiDeploymentName
     };
